@@ -13,7 +13,8 @@ return {
       extensions = {
         fzf = {},
       },
-    })                             -- Initialize Telescope
+    })                               -- Initialize Telescope
+    telescope.load_extension("fzf")
     telescope.load_extension("undo") -- Load undo extension
 
     local builtin = require("telescope.builtin")
@@ -34,8 +35,8 @@ return {
     vim.keymap.set("n", "<leader>ga", function()
       require("telescope.builtin").find_files({
         cwd = "/mnt/c/Devops", -- Set search root
-        hidden = false,    -- Show hidden files
-        no_ignore = false, -- Respect .gitignore
+        hidden = false,        -- Show hidden files
+        no_ignore = false,     -- Respect .gitignore
       })
     end, { desc = "[G]it [A]ll Files in DevOps (Respect .gitignore)" })
   end,

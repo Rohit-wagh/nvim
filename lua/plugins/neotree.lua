@@ -14,5 +14,7 @@ return {
     vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { silent = true, noremap = true })
     -- Map <leader>f to focus Neo-tree if open, or toggle it if not
     vim.keymap.set("n", "<leader>f", "<C-w>w", { silent = true, noremap = true })
+    require("neo-tree").setup({
+    })
   end,
 }
