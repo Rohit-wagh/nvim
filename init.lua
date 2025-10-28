@@ -8,4 +8,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
-require("lazy").setup("plugins")
+-- Faster UI feedback
+vim.o.updatetime = 200
+vim.o.timeoutlen = 400
+vim.o.ttimeoutlen = 10
+
+-- Lazy: trim builtins you don’t need
+require("lazy").setup("plugins", {
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "matchparen",
+        "netrwPlugin",
+        "gzip",
+        "tarPlugin",
+        "zipPlugin",
+        "2html_plugin",
+        "tohtml",
+        "tutor",
+        "shada_plugin",
+      },
+    },
+  },
+})

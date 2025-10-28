@@ -14,6 +14,8 @@ vim.opt.undofile = false
 
 vim.opt.scrolloff = 8
 
+vim.lsp.set_log_level("ERROR")
+vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim/bin/python")
 -- copy and paste to down/up
 vim.keymap.set("n", "<leader>kd", ":.t.<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ku", ":.t-1<CR>", { noremap = true, silent = true })
